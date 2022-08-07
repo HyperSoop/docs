@@ -18,7 +18,7 @@ To install Fabric on your server, download a .jar from [fabricmc.net/use/server]
 Fabric, unlike Paper and such, does not carry any optimizations in itself, so it's not going to perform any better than vanilla.
 Luckily, Fabric offers a choice of mods to optimize your server and/or replicate some of Paper's core features. The following is a list of the most notable server-side optimization mods - those are the ones you should have on your server 100% of the time, they won't change vanilla mechanics or cause any instability at all.
 
-When installing any mods, look out for dependencies - usually it's at least [Fabric API]().
+When installing any mods, look out for dependencies - usually it's at least [Fabric API](https://modrinth.com/mod/fabric-api).
 
 - [Lithium](https://modrinth.com/mod/lithium) - arguably the most important server-side optimization mod, applies overall optimizations to ticking, chunk loading, AI and more.
 - [FerriteCore](https://modrinth.com/mod/ferrite-core) - optimizes memory usage, works on both client and server. Can help you save up on RAM.
@@ -33,6 +33,9 @@ Now, those mods are less tested and more likely to cause issues/break vanilla pa
 - [VMP](https://modrinth.com/mod/vmp-fabric) - applies experimental networking and ticking optimizations to help servers on high player counts.
 - [FastLoad](https://modrinth.com/mod/fastload) - lets the server load less chunks on startup, improving startup times.
 - [Memory Leak Fix](https://modrinth.com/mod/memoryleakfix) - fixes memory leaks and applies misc optimizations to the game.
+
+> [!TIP]
+> Go to your server.properties and change sync-chunk-writes to false. This option is forcibly set to false on Paper and its forks, but on Fabric (and other server distributions) you need to switch this to false manually. This allows the server to save chunks off the main thread, lessening the load on the main tick loop.
 
 ---
 
